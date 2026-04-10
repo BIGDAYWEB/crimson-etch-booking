@@ -6,6 +6,7 @@ const links = [
   { label: "Portfolio", href: "#portfolio" },
   { label: "Artyści", href: "#artyści" },
   { label: "FAQ", href: "#faq" },
+  { label: "E-book", href: "#ebook" },
   { label: "Kontakt", href: "#rezerwacja" },
 ];
 
