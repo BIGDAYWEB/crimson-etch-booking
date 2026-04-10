@@ -10,7 +10,7 @@ const EbookSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="bg-section-alt py-32 px-6 overflow-hidden">
+    <section id="ebook" className="bg-section-alt py-32 px-6 overflow-hidden">
       <div ref={ref} className="mx-auto max-w-5xl">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-20">
           {/* 3D Ebook Cover */}
