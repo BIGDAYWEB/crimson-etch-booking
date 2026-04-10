@@ -20,7 +20,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-4 font-body text-sm uppercase tracking-[0.3em] text-primary"
+          className="mb-4 font-body text-base md:text-lg uppercase tracking-[0.3em] text-primary"
         >
           Luksusowe Studio Tatuażu
         </motion.p>
@@ -40,7 +40,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-6 max-w-md font-body text-sm text-muted-foreground"
+          className="mt-6 max-w-lg font-body text-base md:text-lg text-foreground/70"
         >
           Każdy tatuaż to unikalna historia wyryta w skórze. Tworzymy dzieła,
           które definiują Twoją tożsamość.

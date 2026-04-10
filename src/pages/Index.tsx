@@ -6,6 +6,7 @@ import ArtistsSection from "@/components/ArtistsSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import PriceCalculator from "@/components/PriceCalculator";
 import FAQSection from "@/components/FAQSection";
+import EbookSection from "@/components/EbookSection";
 import ContactSection from "@/components/ContactSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -20,6 +21,7 @@ const Index = () => (
     <ReviewsSection />
     <PriceCalculator />
     <FAQSection />
+    <EbookSection />
     <ContactSection />
     <CTASection />
     <Footer />

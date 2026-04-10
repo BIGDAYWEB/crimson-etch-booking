@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import portfolioRealism from "@/assets/portfolio-realism.jpg";
+import portfolioRealism2 from "@/assets/portfolio-realism-2.jpg";
 import portfolioFineline from "@/assets/portfolio-fineline.jpg";
 import portfolioBlackwork from "@/assets/portfolio-blackwork.jpg";
 import portfolioJapanese from "@/assets/portfolio-japanese.jpg";
@@ -14,7 +15,7 @@ const works = [
   { src: portfolioBlackwork, style: "Blackwork", title: "Geometria blackwork" },
   { src: portfolioJapanese, style: "Japanese", title: "Koi Japanese" },
   { src: portfolioNeo, style: "Neo-Traditional", title: "Neo-traditional roses" },
-  { src: portfolioRealism, style: "Realizm", title: "Portret czarno-szary" },
+  { src: portfolioRealism2, style: "Realizm", title: "Portret czarno-szary" },
 ];
 
 const PortfolioSection = () => {
