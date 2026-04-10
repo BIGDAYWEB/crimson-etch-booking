@@ -48,7 +48,7 @@ const AboutSection = () => {
           className="mt-16 grid grid-cols-3 gap-8"
         >
           {[
-            { num: "11+", label: "Lat doświadczenia" },
+            { num: "12+", label: "Lat doświadczenia" },
             { num: "3500+", label: "Wykonanych tatuaży" },
             { num: "100%", label: "Zadowolonych klientów" },
           ].map((stat) => (
