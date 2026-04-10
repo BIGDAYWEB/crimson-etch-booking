@@ -40,7 +40,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-8 max-w-lg font-display text-base md:text-lg text-foreground/70 italic"
+          className="mt-8 max-w-2xl font-display text-lg md:text-2xl lg:text-3xl text-foreground/70 italic"
         >
           Każdy tatuaż to unikalna historia wyryta w skórze. Tworzymy dzieła,
           które definiują Twoją tożsamość.

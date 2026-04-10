@@ -18,7 +18,7 @@ const CTASection = () => {
             Twoja historia zasługuje na{" "}
             <span className="text-gold-gradient italic">wieczność</span>
           </h2>
-          <p className="mt-6 font-display text-sm text-muted-foreground md:text-base italic">
+          <p className="mt-6 font-display text-lg text-muted-foreground md:text-2xl lg:text-3xl italic">
             Nie czekaj. Najlepsze dzieła sztuki rodzą się z odwagi.
           </p>
           <motion.a
