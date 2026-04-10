@@ -36,34 +36,25 @@ const HeroSection = () => {
           <span className="text-gold-gradient font-medium italic">na zawsze</span>
         </motion.h1>
 
-        <motion.a
-          href="#rezerwacja"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="mt-10 border border-primary px-10 py-4 font-body text-xs uppercase tracking-[0.2em] text-primary transition-all duration-500 hover:bg-primary hover:text-primary-foreground"
-        >
-          Umów się na sesję
-        </motion.a>
-
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.3 }}
-          className="mt-8 max-w-lg font-body text-base md:text-lg text-foreground/70 italic"
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mt-8 max-w-lg text-base md:text-lg text-foreground/70 italic"
+          style={{ fontFamily: "'Courier New', monospace" }}
         >
           Każdy tatuaż to unikalna historia wyryta w skórze. Tworzymy dzieła,
           które definiują Twoją tożsamość.
         </motion.p>
 
         <motion.a
-          href="#ebook"
+          href="#rezerwacja"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.6 }}
-          className="mt-6 font-body text-xs uppercase tracking-[0.2em] text-primary/80 underline underline-offset-4 transition-all duration-300 hover:text-primary"
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-10 border-2 border-primary px-10 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary transition-all duration-500 hover:bg-primary hover:text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)]"
         >
-          Pobierz darmowy e-book →
+          Umów się na sesję
         </motion.a>
       </div>
     </section>
