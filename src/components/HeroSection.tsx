@@ -36,35 +36,36 @@ const HeroSection = () => {
           <span className="text-gold-gradient font-medium italic">na zawsze</span>
         </motion.h1>
 
+        <motion.a
+          href="#rezerwacja"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-10 border border-primary px-10 py-4 font-body text-xs uppercase tracking-[0.2em] text-primary transition-all duration-500 hover:bg-primary hover:text-primary-foreground"
+        >
+          Umów się na sesję
+        </motion.a>
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mt-6 max-w-lg font-body text-base md:text-lg text-foreground/70"
+          transition={{ duration: 1, delay: 1.3 }}
+          className="mt-8 max-w-lg font-body text-base md:text-lg text-foreground/70 italic"
         >
           Każdy tatuaż to unikalna historia wyryta w skórze. Tworzymy dzieła,
           które definiują Twoją tożsamość.
         </motion.p>
 
         <motion.a
-          href="#rezerwacja"
+          href="#ebook"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.3 }}
-          className="mt-10 border border-primary px-10 py-4 font-body text-xs uppercase tracking-[0.2em] text-primary transition-all duration-500 hover:bg-primary hover:text-primary-foreground"
+          transition={{ duration: 0.8, delay: 1.6 }}
+          className="mt-6 font-body text-xs uppercase tracking-[0.2em] text-primary/80 underline underline-offset-4 transition-all duration-300 hover:text-primary"
         >
-          Umów się na sesję
+          Pobierz darmowy e-book →
         </motion.a>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="h-12 w-px bg-gradient-to-b from-primary/60 to-transparent" />
-      </motion.div>
     </section>
   );
 };
