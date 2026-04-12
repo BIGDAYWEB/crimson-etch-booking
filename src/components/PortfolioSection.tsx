@@ -26,7 +26,7 @@ import portfolioNeo3 from "@/assets/portfolio-neo-3.jpg";
 import portfolioNeo4 from "@/assets/portfolio-neo-4.jpg";
 import portfolioNeo5 from "@/assets/portfolio-neo-5.jpg";
 
-const styles = ["Wszystkie", "Realizm", "Fineline", "Blackwork", "Japanese", "Neo-Traditional"] as const;
+const styles = ["Realizm", "Fineline", "Blackwork", "Japanese", "Neo-Traditional"] as const;
 
 const works = [
   { src: portfolioRealism, style: "Realizm", title: "Portret realistyczny" },
@@ -57,11 +57,11 @@ const works = [
 ];
 
 const PortfolioSection = () => {
-  const [activeStyle, setActiveStyle] = useState<string>("Wszystkie");
+  const [activeStyle, setActiveStyle] = useState<string>("Realizm");
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  const filtered = activeStyle === "Wszystkie" ? works : works.filter((w) => w.style === activeStyle);
+  const filtered = works.filter((w) => w.style === activeStyle);
 
   return (
     <section id="portfolio" className="py-32 px-6">
