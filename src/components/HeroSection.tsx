@@ -42,8 +42,9 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.8 }}
           className="mt-8 max-w-2xl font-display text-lg md:text-2xl lg:text-3xl text-foreground/70 italic"
         >
-          Każdy tatuaż to unikalna historia wyryta w skórze. Tworzymy dzieła,
-          które definiują Twoją tożsamość.
+          Każdy tatuaż to unikalna historia wyryta w skórze.
+          <br />
+          Tworzymy dzieła, które definiują Twoją tożsamość.
         </motion.p>
 
         <motion.a
