@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send } from "lucide-react";
+import { Send, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 
 const ContactSection = () => {
@@ -72,8 +72,8 @@ const ContactSection = () => {
           <div className="space-y-8">
             <div>
               <p className="font-body text-xs uppercase tracking-widest text-muted-foreground">Adres</p>
-              <p className="mt-2 font-display text-lg">ul. Artystyczna 42</p>
-              <p className="font-display text-lg">00-001 Warszawa</p>
+              <p className="mt-2 font-display text-lg">ul. Krzywa 15</p>
+              <p className="font-display text-lg">97-532 Mała Wieś</p>
             </div>
             <div>
               <p className="font-body text-xs uppercase tracking-widest text-muted-foreground">Godziny otwarcia</p>
@@ -85,10 +85,16 @@ const ContactSection = () => {
               <p className="mt-2 font-body text-sm text-muted-foreground">+48 123 456 789</p>
               <p className="font-body text-sm text-muted-foreground">kontakt@inkalchemy.pl</p>
             </div>
-            <div className="flex gap-4">
-              <a href="#" className="font-body text-xs uppercase tracking-widest text-primary transition-all hover:tracking-[0.25em]">Instagram</a>
-              <a href="#" className="font-body text-xs uppercase tracking-widest text-primary transition-all hover:tracking-[0.25em]">Facebook</a>
-              <a href="#" className="font-body text-xs uppercase tracking-widest text-primary transition-all hover:tracking-[0.25em]">WhatsApp</a>
+            <div className="flex gap-5">
+              <a href="#" className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]">
+                <Instagram className="h-6 w-6" />
+              </a>
+              <a href="#" className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]">
+                <Facebook className="h-6 w-6" />
+              </a>
+              <a href="#" className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]">
+                <MessageCircle className="h-6 w-6" />
+              </a>
             </div>
           </div>
         </motion.div>

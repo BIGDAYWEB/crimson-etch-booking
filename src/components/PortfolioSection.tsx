@@ -2,20 +2,58 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import portfolioRealism from "@/assets/portfolio-realism.jpg";
 import portfolioRealism2 from "@/assets/portfolio-realism-2.jpg";
+import portfolioRealism3 from "@/assets/portfolio-realism-3.jpg";
+import portfolioRealism4 from "@/assets/portfolio-realism-4.jpg";
+import portfolioRealism5 from "@/assets/portfolio-realism-5.jpg";
 import portfolioFineline from "@/assets/portfolio-fineline.jpg";
+import portfolioFineline2 from "@/assets/portfolio-fineline-2.jpg";
+import portfolioFineline3 from "@/assets/portfolio-fineline-3.jpg";
+import portfolioFineline4 from "@/assets/portfolio-fineline-4.jpg";
+import portfolioFineline5 from "@/assets/portfolio-fineline-5.jpg";
 import portfolioBlackwork from "@/assets/portfolio-blackwork.jpg";
+import portfolioBlackwork2 from "@/assets/portfolio-blackwork-2.jpg";
+import portfolioBlackwork3 from "@/assets/portfolio-blackwork-3.jpg";
+import portfolioBlackwork4 from "@/assets/portfolio-blackwork-4.jpg";
+import portfolioBlackwork5 from "@/assets/portfolio-blackwork-5.jpg";
 import portfolioJapanese from "@/assets/portfolio-japanese.jpg";
+import portfolioJapanese2 from "@/assets/portfolio-japanese-2.jpg";
+import portfolioJapanese3 from "@/assets/portfolio-japanese-3.jpg";
+import portfolioJapanese4 from "@/assets/portfolio-japanese-4.jpg";
+import portfolioJapanese5 from "@/assets/portfolio-japanese-5.jpg";
 import portfolioNeo from "@/assets/portfolio-neo.jpg";
+import portfolioNeo2 from "@/assets/portfolio-neo-2.jpg";
+import portfolioNeo3 from "@/assets/portfolio-neo-3.jpg";
+import portfolioNeo4 from "@/assets/portfolio-neo-4.jpg";
+import portfolioNeo5 from "@/assets/portfolio-neo-5.jpg";
 
 const styles = ["Wszystkie", "Realizm", "Fineline", "Blackwork", "Japanese", "Neo-Traditional"] as const;
 
 const works = [
   { src: portfolioRealism, style: "Realizm", title: "Portret realistyczny" },
-  { src: portfolioFineline, style: "Fineline", title: "Botanika fineline" },
-  { src: portfolioBlackwork, style: "Blackwork", title: "Geometria blackwork" },
-  { src: portfolioJapanese, style: "Japanese", title: "Koi Japanese" },
-  { src: portfolioNeo, style: "Neo-Traditional", title: "Neo-traditional roses" },
   { src: portfolioRealism2, style: "Realizm", title: "Portret czarno-szary" },
+  { src: portfolioRealism3, style: "Realizm", title: "Lew – realizm" },
+  { src: portfolioRealism4, style: "Realizm", title: "Oko – hiperrealizm" },
+  { src: portfolioRealism5, style: "Realizm", title: "Wilk i księżyc" },
+  { src: portfolioFineline, style: "Fineline", title: "Botanika fineline" },
+  { src: portfolioFineline2, style: "Fineline", title: "Polne kwiaty" },
+  { src: portfolioFineline3, style: "Fineline", title: "Motyl fineline" },
+  { src: portfolioFineline4, style: "Fineline", title: "Księżyc i gwiazdy" },
+  { src: portfolioFineline5, style: "Fineline", title: "Koliber fineline" },
+  { src: portfolioBlackwork, style: "Blackwork", title: "Geometria blackwork" },
+  { src: portfolioBlackwork2, style: "Blackwork", title: "Mandala blackwork" },
+  { src: portfolioBlackwork3, style: "Blackwork", title: "Tribal sleeve" },
+  { src: portfolioBlackwork4, style: "Blackwork", title: "Dotwork ornament" },
+  { src: portfolioBlackwork5, style: "Blackwork", title: "Kruk blackwork" },
+  { src: portfolioJapanese, style: "Japanese", title: "Koi Japanese" },
+  { src: portfolioJapanese2, style: "Japanese", title: "Smok irezumi" },
+  { src: portfolioJapanese3, style: "Japanese", title: "Sakura i fale" },
+  { src: portfolioJapanese4, style: "Japanese", title: "Maska Hannya" },
+  { src: portfolioJapanese5, style: "Japanese", title: "Feniks ognisty" },
+  { src: portfolioNeo, style: "Neo-Traditional", title: "Neo-traditional roses" },
+  { src: portfolioNeo2, style: "Neo-Traditional", title: "Kompas neo-trad" },
+  { src: portfolioNeo3, style: "Neo-Traditional", title: "Orzeł neo-trad" },
+  { src: portfolioNeo4, style: "Neo-Traditional", title: "Czaszka i piwonie" },
+  { src: portfolioNeo5, style: "Neo-Traditional", title: "Wąż i sztylet" },
 ];
 
 const PortfolioSection = () => {
