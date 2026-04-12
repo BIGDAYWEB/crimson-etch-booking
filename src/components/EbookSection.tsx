@@ -52,7 +52,8 @@ const EbookSection = () => {
               Darmowy E-book
             </p>
             <h2 className="font-display text-3xl font-light md:text-4xl lg:text-5xl leading-tight">
-              Najczęstsze błędy przy pierwszym tatuażu{" "}
+              Najczęstsze błędy przy pierwszym tatuażu
+              <br />
               <span className="text-gold-gradient italic">(i jak ich uniknąć)</span>
             </h2>
             <p className="mt-6 font-body text-base text-muted-foreground leading-relaxed max-w-lg">
