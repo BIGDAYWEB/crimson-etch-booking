@@ -26,7 +26,7 @@ const CTASection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-10 inline-block bg-gold-gradient px-12 py-5 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground transition-all duration-500 hover:shadow-gold"
+            className="mt-10 inline-block bg-gold-gradient px-12 py-5 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground transition-all duration-500 shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.7)]"
           >
             Zarezerwuj swój termin
           </motion.a>

@@ -67,7 +67,7 @@ const EbookSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-8 inline-flex items-center gap-3 bg-primary px-8 py-4 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground transition-all duration-500 hover:shadow-gold hover:scale-105"
+              className="mt-8 inline-flex items-center gap-3 bg-primary px-8 py-4 font-body text-xs uppercase tracking-[0.2em] text-primary-foreground transition-all duration-500 hover:scale-105 shadow-[0_0_25px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.7)]"
             >
               <Download size={18} />
               Pobierz za darmo
