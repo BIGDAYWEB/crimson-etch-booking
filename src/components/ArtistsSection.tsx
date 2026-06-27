@@ -12,7 +12,7 @@ const artists = [
     img: artist1,
   },
   {
-    name: "Maya Noir",
+    name: "Maya Bird",
     specialty: "Neo-Traditional & Color",
     bio: "Łączy klasykę z nowoczesnością. Jej prace pulsują kolorem i energią. Artystka znana na międzynarodowych konwentach.",
     img: artist2,
@@ -63,7 +63,13 @@ const ArtistsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               </div>
               <div className="mt-6">
-                <h3 className="font-display text-2xl">{artist.name}</h3>
+                <h3
+                  className={`font-display text-2xl ${
+                    artist.name === "Viktor Shade" ? "text-red-600" : ""
+                  }`}
+                >
+                  {artist.name}
+                </h3>
                 <p className="mt-1 font-body text-xs uppercase tracking-widest text-primary">
                   {artist.specialty}
                 </p>
