@@ -65,7 +65,7 @@ const ArtistsSection = () => {
               <div className="mt-6">
                 <h3
                   className={`font-display text-2xl ${
-                    artist.name === "Viktor Shade" ? "text-red-600" : ""
+                    artist.name === "Viktor Shade" ? "text-white" : ""
                   }`}
                 >
                   {artist.name}
