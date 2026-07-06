@@ -28,7 +28,8 @@ const ContactSection = () => {
     });
     setSubmitting(false);
     if (error) {
-      toast.error("Nie udało się wysłać wiadomości. Spróbuj ponownie.");
+      console.log(error);
+      toast.error(error.message);
       return;
     }
     toast.success("Wiadomość wysłana! Odezwiemy się wkrótce.");
@@ -59,7 +60,9 @@ const ContactSection = () => {
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Imię i nazwisko *</label>
+              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">
+                Imię i nazwisko *
+              </label>
               <input
                 type="text"
                 required
@@ -71,7 +74,9 @@ const ContactSection = () => {
               />
             </div>
             <div>
-              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Adres e-mail *</label>
+              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">
+                Adres e-mail *
+              </label>
               <input
                 type="email"
                 required
@@ -83,7 +88,9 @@ const ContactSection = () => {
               />
             </div>
             <div>
-              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Numer telefonu</label>
+              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">
+                Numer telefonu
+              </label>
               <input
                 type="tel"
                 maxLength={20}
@@ -121,7 +128,8 @@ const ContactSection = () => {
                 >
                   Polityką Prywatności
                 </Link>{" "}
-                i wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na przesłane zapytanie.
+                i wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na przesłane
+                zapytanie.
               </span>
             </label>
             <button
@@ -151,13 +159,22 @@ const ContactSection = () => {
               <p className="font-body text-sm text-muted-foreground">kontakt@inkalchemy.pl</p>
             </div>
             <div className="flex gap-5">
-              <a href="#" className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]">
+              <a
+                href="#"
+                className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]"
+              >
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]">
+              <a
+                href="#"
+                className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]"
+              >
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]">
+              <a
+                href="#"
+                className="text-primary transition-all duration-300 hover:text-foreground hover:scale-110 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]"
+              >
                 <MessageCircle className="h-6 w-6" />
               </a>
             </div>
