@@ -2,16 +2,23 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const [formData, setFormData] = useState({ name: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [consent, setConsent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consent) {
+      toast.error("Zaakceptuj Politykę Prywatności.");
+      return;
+    }
     toast.success("Wiadomość wysłana! Odezwiemy się wkrótce.");
-    setFormData({ name: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", message: "" });
+    setConsent(false);
   };
 
   return (
@@ -37,7 +44,7 @@ const ContactSection = () => {
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Imię</label>
+              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Imię i nazwisko *</label>
               <input
                 type="text"
                 required
@@ -45,11 +52,34 @@ const ContactSection = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="mt-2 w-full border-b border-border bg-transparent py-3 font-body text-foreground outline-none transition-colors focus:border-primary"
-                placeholder="Twoje imię"
+                placeholder="Twoje imię i nazwisko"
               />
             </div>
             <div>
-              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Wiadomość</label>
+              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Adres e-mail *</label>
+              <input
+                type="email"
+                required
+                maxLength={255}
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="mt-2 w-full border-b border-border bg-transparent py-3 font-body text-foreground outline-none transition-colors focus:border-primary"
+                placeholder="twoj@email.pl"
+              />
+            </div>
+            <div>
+              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Numer telefonu</label>
+              <input
+                type="tel"
+                maxLength={20}
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className="mt-2 w-full border-b border-border bg-transparent py-3 font-body text-foreground outline-none transition-colors focus:border-primary"
+                placeholder="+48 ..."
+              />
+            </div>
+            <div>
+              <label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Wiadomość *</label>
               <textarea
                 required
                 maxLength={1000}
@@ -60,6 +90,25 @@ const ContactSection = () => {
                 placeholder="Opisz swój pomysł na tatuaż..."
               />
             </div>
+            <label className="flex items-start gap-3 cursor-pointer group">
+              <input
+                type="checkbox"
+                required
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-1 h-4 w-4 shrink-0 accent-primary cursor-pointer"
+              />
+              <span className="font-body text-xs leading-relaxed text-muted-foreground">
+                Zapoznałem(-am) się z{" "}
+                <Link
+                  to="/polityka-prywatnosci"
+                  className="text-primary underline underline-offset-4 transition-colors hover:text-foreground"
+                >
+                  Polityką Prywatności
+                </Link>{" "}
+                i wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na przesłane zapytanie.
+              </span>
+            </label>
             <button
               type="submit"
               className="flex items-center gap-3 border border-primary px-8 py-4 font-body text-xs uppercase tracking-widest text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
