@@ -3,17 +3,32 @@ import { useRef, useState } from "react";
 import { Send, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [consent, setConsent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!consent) {
       toast.error("Zaakceptuj Politykę Prywatności.");
+      return;
+    }
+    setSubmitting(true);
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim() || null,
+      message: formData.message.trim(),
+      consent,
+    });
+    setSubmitting(false);
+    if (error) {
+      toast.error("Nie udało się wysłać wiadomości. Spróbuj ponownie.");
       return;
     }
     toast.success("Wiadomość wysłana! Odezwiemy się wkrótce.");
@@ -111,10 +126,11 @@ const ContactSection = () => {
             </label>
             <button
               type="submit"
-              className="flex items-center gap-3 border border-primary px-8 py-4 font-body text-xs uppercase tracking-widest text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+              disabled={submitting}
+              className="flex items-center gap-3 border border-primary px-8 py-4 font-body text-xs uppercase tracking-widest text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send className="h-4 w-4" />
-              Wyślij wiadomość
+              {submitting ? "Wysyłanie..." : "Wyślij wiadomość"}
             </button>
           </form>
 
