@@ -19,7 +19,7 @@ const ContactSection = () => {
       return;
     }
     setSubmitting(true);
-    const { error } = await supabase.from("contact_submissions").insert({
+    const { error } = await supabase.from("kontakt_zgloszenia" as any).insert({
       name: formData.name.trim(),
       email: formData.email.trim(),
       phone: formData.phone.trim() || null,
