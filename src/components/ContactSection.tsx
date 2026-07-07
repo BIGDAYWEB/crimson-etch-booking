@@ -26,18 +26,14 @@ const ContactSection = () => {
       message: formData.message.trim(),
       consent,
     };
-    const { data: inserted, error } = await supabase
-      .from("contact_submissions")
-      .insert(payload)
-      .select("created_at")
-      .single();
+    const { error } = await supabase.from("contact_submissions").insert(payload);
     if (error) {
       setSubmitting(false);
       toast.error("Nie udało się wysłać wiadomości. Spróbuj ponownie.");
       return;
     }
     const { error: emailError } = await supabase.functions.invoke("send-contact-email", {
-      body: { ...payload, created_at: inserted?.created_at },
+      body: { ...payload, created_at: new Date().toISOString() },
     });
     setSubmitting(false);
     if (emailError) {
