@@ -19,17 +19,25 @@ const ContactSection = () => {
       return;
     }
     setSubmitting(true);
-    const { error } = await supabase.from("contact_submissions").insert({
+    const payload = {
       name: formData.name.trim(),
       email: formData.email.trim(),
       phone: formData.phone.trim() || null,
       message: formData.message.trim(),
       consent,
-    });
-    setSubmitting(false);
+    };
+    const { error } = await supabase.from("contact_submissions").insert(payload);
     if (error) {
+      setSubmitting(false);
       toast.error("Nie udało się wysłać wiadomości. Spróbuj ponownie.");
       return;
+    }
+    const { error: emailError } = await supabase.functions.invoke("send-contact-email", {
+      body: { ...payload, created_at: new Date().toISOString() },
+    });
+    setSubmitting(false);
+    if (emailError) {
+      console.error("send-contact-email failed:", emailError);
     }
     toast.success("Wiadomość wysłana! Odezwiemy się wkrótce.");
     setFormData({ name: "", email: "", phone: "", message: "" });
